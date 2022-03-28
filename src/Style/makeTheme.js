@@ -18,7 +18,7 @@ const makeTheme = (mode) =>
                 }),
         },
         shape: {
-            borderRadius: 12,
+            borderRadius: "18px",
         },
         typography:{
             fontFamily:"Montserrat"

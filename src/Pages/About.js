@@ -25,12 +25,17 @@ const About = () => {
             sx={{
               width: { xs: "100% !important", sm: "320px !important" },
               textAlign: { xs: "center", sm: "start" },
+                boxShadow:"0 4px 20px rgba(0,0,0,0.3)",
+                borderRadius:"20px",
+                overflow:"hidden",
             }}
           >
             <img
               src={leftRect}
               style={{
                 objectFit: "cover",
+                  width: "100%",
+                  height: "100%"
               }}
             />
           </Box>
@@ -99,12 +104,17 @@ const About = () => {
             sx={{
               width: { xs: "100% !important", sm: "320px !important" },
               textAlign: { xs: "center", sm: "start" },
+                boxShadow:"0 4px 20px rgba(0,0,0,0.3)",
+                borderRadius:"20px",
+                overflow:"hidden",
             }}
           >
             <img
               src={rightRect}
               style={{
                 objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
               }}
             />
           </Box>
@@ -130,9 +140,13 @@ const About = () => {
             }}
           >
             <Box
-              sx={{ position: "relative", "&:hover .dis": { display: "flex" } }}
+              sx={{ position: "relative", "&:hover .dis": { display: "flex" },
+                  boxShadow:"0 4px 20px rgba(0,0,0,0.3)",
+                  borderRadius:"20px",
+                  overflow:"hidden",
+            }}
             >
-              <img sx={{ width: "100%", height: "100%" }} src={leftRect} />
+              <img styles={{ width: "100%",height: "100%", objectFit:'cover' }} src={leftRect} />
               <Box
                 className="dis"
                 sx={{
@@ -147,24 +161,20 @@ const About = () => {
                   backgroundColor: "rgba(0,0,0,0.5)",
                   display: "none",
                   borderRadius: "13px",
-                  transition: ".5s",
+                  transition: ".5s !important",
                 }}
               >
                 <Typography sx={{ textAlign: "end", fontSize: "13px" }}>
                   4 августа 2021 19:24
                 </Typography>
-                <Typography
-                  hover={{ background: "red" }}
-                  sx={{
-                    background: { hover: "red" },
-                  }}
-                >
+                <Typography>
                   Традиционные виды японских кухонных ножей
                 </Typography>
               </Box>
             </Box>
             <Box
-              sx={{ position: "relative", "&:hover .dis": { display: "flex" } }}
+              sx={{ position: "relative", "&:hover .dis": { display: "flex" },
+            }}
             >
               <img sx={{ width: "100%", height: "100%" }} src={middleRect} />
               <Box
@@ -187,11 +197,7 @@ const About = () => {
                 <Typography sx={{ textAlign: "end", fontSize: "13px" }}>
                   4 августа 2021 19:24
                 </Typography>
-                <Typography
-                  hover={{ background: "red" }}
-                  sx={{
-                    background: { hover: "red" },
-                  }}
+                <Typography sx={{}}
                 >
                   Традиционные виды японских кухонных ножей
                 </Typography>

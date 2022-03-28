@@ -12,7 +12,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import logo from "../../Assets/Images/logo.png";
 import {useNavigate} from "react-router-dom";
-import {Button} from "@mui/material";
+import {Button, useScrollTrigger} from "@mui/material";
 import {FaShoppingCart} from "react-icons/fa";
 import {useEffect, useState} from "react";
 
@@ -84,11 +84,24 @@ export default function Header() {
             } else setScroll(false);
         };
     }, []);
+    const trigger = useScrollTrigger()
 
     return (
         <>
             <CssBaseline/>
-            <AppBar position="fixed" open={open} >
+            <AppBar
+                position="fixed"
+                open={open}
+                elevation={trigger ? 24 : 2}
+                style={{
+                    backgroundColor: trigger ? "black" : "rgba(0, 0, 0, 0.3)",
+                    boxShadow: trigger
+                        ? "5px 0px 27px -5px rgba(0, 0, 0, 0.3) !important"
+                        : "black",
+                    transition: trigger ? "1s" : "1s",
+                }}
+
+            >
                 <Toolbar>
 
                     <Box
@@ -101,8 +114,15 @@ export default function Header() {
                     >
                         <img style={{cursor: 'pointer'}} onClick={() => navigate('/')} src={logo} alt="logo"/>
                         <Box>
-                            
-                            <Button sx={{minWidth: '20px', color: 'white',mr:"10px",p:"10px", border:"1px solid red", fontSize: {xs: '12px', sm: '15px'}}}
+
+                            <Button sx={{
+                                minWidth: '20px',
+                                color: 'white',
+                                mr: "10px",
+                                p: "10px",
+                                border: "1px solid red",
+                                fontSize: {xs: '12px', sm: '15px'}
+                            }}
                                     color="error"
                                     onClick={() => navigate('/basket')}>
                                 <FaShoppingCart/>

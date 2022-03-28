@@ -13,11 +13,11 @@ import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "black",
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
-  color: theme.palette.text.secondary,
+  color: "white !important",
 }));
 
 export default function Footer() {
@@ -104,7 +104,7 @@ export default function Footer() {
               <span style={{ margin: "4px 0px" }}>Точилки для ножей</span>
               <span style={{ margin: "4px 0px" }}>Аксессуары</span>
             </Typography>
-            <Typography
+            <Box
               sx={{
                 fontSize: "17px",
                 textAlign: "start",
@@ -160,7 +160,7 @@ export default function Footer() {
                   <TwitterIcon />
                 </IconButton>
               </Box>
-            </Typography>
+            </Box>
           </Item>
         </Grid>
         <Grid item xs={12} md={10} lg={4} m={"0 auto"} sx={{position: "relative"}}>
