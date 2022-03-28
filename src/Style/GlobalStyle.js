@@ -15,9 +15,7 @@ const inputGlobalStyles = (mode) => (
             ".MuiListItem-root ": {
                 padding: "0 !important"
             },
-            ".MuiContainer-root": {},
-            ".css-heg063-MuiTabs-flexContainer": {
-                justifyContent: "center"
+            ".MuiContainer-root": {
             },
             ".Mui-selected": {
                 color: "#FF0000 !important"

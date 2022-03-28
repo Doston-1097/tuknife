@@ -323,6 +323,7 @@ function Basket(props) {
                                             sx={{color: '#C80000', display: 'inline-block'}}>Политикой
                                             конфиденциальности</Typography>, а также согласен получать
                                         информационную рассылку</Typography>
+                                    <Toastify title={"yuborildi"}>
                                         <Button variant="contained" onClick={sendValue} sx={{
                                             color: 'white',
                                             backgroundColor: '#C80000',
@@ -331,6 +332,7 @@ function Basket(props) {
                                             borderRadius: '27px',
                                             '&:hover': {backgroundColor: '#C82000'}
                                         }}>Отправить форму</Button>
+                                    </Toastify>
 
                                 </Box>
                             </Grid>

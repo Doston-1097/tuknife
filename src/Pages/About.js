@@ -6,7 +6,7 @@ import rightRect from "../Assets/Images/Rectangle 39.png";
 
 const About = () => {
   return (
-    <Container>
+    <Container sx={{mx:"auto"}}>
       <Box
         sx={{
           color: "white",

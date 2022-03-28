@@ -10,7 +10,7 @@ const FirstSection = () => {
             backgroundImage: `url(${vh})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
         }}>
             <Container
             sx={{display: "flex",flexDirection: "column",justifyContent: "center",height: "100%"}}
