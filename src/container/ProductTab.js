@@ -81,36 +81,36 @@ export default function ProductTab(props) {
               label="Кухонные ножи"
               {...a11yProps(0)}
             />
-            <Tab
-              icon={
-                <img
-                  src="./images/icons/toolKnife.svg"
-                  alt=""
-                />
-              }
-              label="Точилки для ножей"
-              {...a11yProps(2)}
-            />
-            <Tab
-              icon={
-                <img
-                  src="./images/icons/acecuar.svg"
-                  alt=""
-                />
-              }
-              label="Аксессуары для кухни"
-              {...a11yProps(3)}
-            />
-            <Tab
-                icon={
-                  <img
-                      src="./images/icons/fightKnife.svg"
-                      alt=""
-                  />
-                }
-                label="Складные ножи"
-                {...a11yProps(1)}
-            />
+            {/*<Tab*/}
+            {/*  icon={*/}
+            {/*    <img*/}
+            {/*      src="./images/icons/toolKnife.svg"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*  }*/}
+            {/*  label="Точилки для ножей"*/}
+            {/*  {...a11yProps(2)}*/}
+            {/*/>*/}
+            {/*<Tab*/}
+            {/*  icon={*/}
+            {/*    <img*/}
+            {/*      src="./images/icons/acecuar.svg"*/}
+            {/*      alt=""*/}
+            {/*    />*/}
+            {/*  }*/}
+            {/*  label="Аксессуары для кухни"*/}
+            {/*  {...a11yProps(3)}*/}
+            {/*/>*/}
+            {/*<Tab*/}
+            {/*    icon={*/}
+            {/*      <img*/}
+            {/*          src="./images/icons/fightKnife.svg"*/}
+            {/*          alt=""*/}
+            {/*      />*/}
+            {/*    }*/}
+            {/*    label="Складные ножи"*/}
+            {/*    {...a11yProps(1)}*/}
+            {/*/>*/}
           </Tabs>
         </AppBar>
         <SwipeableViews
