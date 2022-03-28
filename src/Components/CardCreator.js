@@ -11,7 +11,7 @@ const Item = styled(Paper)(({theme}) => ({
     alignItems: "center",
     display: "flex",
     boxShadow:"0 2px 20px rgba(0,0,0,0.2)",
-    minHeight:"300px"
+    minHeight:"250px"
 }));
 
 function CardCreator({knifesData}) {
@@ -22,7 +22,7 @@ function CardCreator({knifesData}) {
     }
     console.log(knifesData)
     return (
-        <Grid container sx={{mt:"50px" ,width:"100%"}} spacing={3} >
+        <Grid container sx={{mt:"50px"}} spacing={3} >
             {knifesData.map((kni, id) => (
                 <Grid xs={6} lg={3} md={4} sx={{color:"white"}} item key={id}>
                     <Item sx={{position: "relative",overflow:"hidden",justifyContent:"center",alignItems: "center",display: "flex"}}>

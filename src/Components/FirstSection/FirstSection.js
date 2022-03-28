@@ -11,6 +11,7 @@ const FirstSection = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
+            boxShadow:"0 4px 20px rgba(0,0,0,0.5)"
         }}>
             <Container
             sx={{display: "flex",flexDirection: "column",justifyContent: "center",height: "100%"}}

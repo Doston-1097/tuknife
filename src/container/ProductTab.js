@@ -22,7 +22,7 @@ function TabPanel(props) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && <Box >{children}</Box>}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 }
@@ -61,8 +61,7 @@ export default function ProductTab(props) {
   };
 
   return (
-    <Container sx={{ pt: "50px" }}>
-      <Box>
+    <Container sx={{mt:"50px",boxSizing:"border-box"}}>
         <AppBar position="static" className={classes.tab}>
           <Tabs
             sx={{ backgroundColor: "transparent !important" }}
@@ -73,10 +72,8 @@ export default function ProductTab(props) {
             aria-label="full width tabs example"
           >
             <Tab
-              sx={{ fontSize: { xs: "12px", sm: "15px" } }}
               icon={
                 <img
-                  style={{ width: { xs: "50%", sm: "100%" } }}
                   src="./images/icons/kitchenKnife.svg"
                   alt=""
                 />
@@ -85,22 +82,8 @@ export default function ProductTab(props) {
               {...a11yProps(0)}
             />
             <Tab
-              sx={{ fontSize: { xs: "12px", sm: "15px" } }}
               icon={
                 <img
-                  style={{ width: { xs: "50%", sm: "100%" } }}
-                  src="./images/icons/fightKnife.svg"
-                  alt=""
-                />
-              }
-              label="Складные ножи"
-              {...a11yProps(1)}
-            />
-            <Tab
-              sx={{ fontSize: { xs: "12px", sm: "15px" } }}
-              icon={
-                <img
-                  style={{ width: { xs: "50%", sm: "100%" } }}
                   src="./images/icons/toolKnife.svg"
                   alt=""
                 />
@@ -109,10 +92,8 @@ export default function ProductTab(props) {
               {...a11yProps(2)}
             />
             <Tab
-              sx={{ fontSize: { xs: "12px", sm: "15px" } }}
               icon={
                 <img
-                  style={{ width: { xs: "50%", sm: "100%" } }}
                   src="./images/icons/acecuar.svg"
                   alt=""
                 />
@@ -120,10 +101,19 @@ export default function ProductTab(props) {
               label="Аксессуары для кухни"
               {...a11yProps(3)}
             />
+            <Tab
+                icon={
+                  <img
+                      src="./images/icons/fightKnife.svg"
+                      alt=""
+                  />
+                }
+                label="Складные ножи"
+                {...a11yProps(1)}
+            />
           </Tabs>
         </AppBar>
         <SwipeableViews
-          sx={{ width: "100% !important" }}
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
           onChangeIndex={handleChangeIndex}
@@ -141,7 +131,6 @@ export default function ProductTab(props) {
             <CardCreator knifesData={knifesData.products.kitchenTools} />
           </TabPanel>
         </SwipeableViews>
-      </Box>
     </Container>
   );
 }
