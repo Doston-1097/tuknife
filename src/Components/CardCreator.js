@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {Grid, Typography,Box, Button} from "@mui/material";
+import {Grid, Typography,Box} from "@mui/material";
 import Paper from '@mui/material/Paper';
 import {styled} from '@mui/material/styles';
 import {dispatch} from "../redux/store";
 import { IoIosAddCircleOutline} from "react-icons/io";
 import IconButton from "@mui/material/IconButton";
+import {useSelector} from "react-redux";
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: "#272727",
@@ -14,13 +15,16 @@ const Item = styled(Paper)(({theme}) => ({
     minHeight:"250px"
 }));
 
+
 function CardCreator({knifesData}) {
+    const [counter,setCouter]=useState(0)
     const change = (product) => {
         dispatch({type: 'ADD_BASKET', payload: {...product}},)
-
-        console.log(product)
+        setCouter(counter+1)
+        dispatch({type: 'COUNTER', payload: {counter}},)
     }
     console.log(knifesData)
+
     return (
         <Grid container sx={{mt:"50px"}} spacing={3} >
             {knifesData.map((kni, id) => (

@@ -7,14 +7,15 @@ import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import logo from "../../Assets/Images/logo.png";
 import {useNavigate} from "react-router-dom";
-import {Button, useScrollTrigger} from "@mui/material";
+import {Button, Typography, useScrollTrigger} from "@mui/material";
 import {FaShoppingCart} from "react-icons/fa";
 import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {makeStyles} from "@mui/styles";
 
 const drawerWidth = 280;
 
@@ -61,8 +62,22 @@ const DrawerHeader = styled("div")(({theme}) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
 }));
+const useStyles = makeStyles({
+    span1: {
+        backgroundColor:"red",
+        width:"20px",
+        height:"20px",
+        display:"flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius:"50%",
+        position: "absolute",
+        bottom:"-25%",
+        left:"-15%",
+    },
+});
 
-export default function Header() {
+export default function Header(props) {
 
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -84,8 +99,11 @@ export default function Header() {
             } else setScroll(false);
         };
     }, []);
-    const trigger = useScrollTrigger()
 
+
+    const trigger = useScrollTrigger()
+    const count=useSelector((state)=>state.allProducts.counter)
+    const classes = useStyles(props);
     return (
         <>
             <CssBaseline/>
@@ -126,6 +144,7 @@ export default function Header() {
                                     color="error"
                                     onClick={() => navigate('/basket')}>
                                 <FaShoppingCart/>
+                                {count!==0?<Typography className={classes.span1}>{count}</Typography>:" "}
                             </Button>
                             <Button sx={{color: 'white', border: '1px solid red', fontSize: {xs: '12px', sm: '15px'}}}
                                     color="error"

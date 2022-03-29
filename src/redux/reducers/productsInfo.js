@@ -1,6 +1,4 @@
 import * as t from "../types/types";
-import {SET_ADMIN_PRODUCTS_CATIGORY} from "../types/types";
-import {sendProducts} from "../actions/doing";
 
 const initialState = {
     products: {
@@ -138,6 +136,7 @@ const initialState = {
         email: 'den@gmail.com',
         password: '12345',
     },
+    counter:0
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -152,6 +151,11 @@ const productsReducer = (state = initialState, action) => {
             return {
                 ...state, sendProducts: [...state.sendProducts, {...action.payload}]
 
+            }
+            case "COUNTER":
+            return {
+                ...state,
+                counter: action.payload.counter
             }
 
 //----------------------------------------------------------------------------------------------

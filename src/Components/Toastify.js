@@ -1,23 +1,50 @@
-import "../Style/styles.css";
-import {injectStyle} from "react-toastify/dist/inject-style";
-import {ToastContainer, toast} from "react-toastify";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
-// CALL IT ONCE IN YOUR APP
-if (typeof window !== "undefined") {
-    injectStyle();
-}
+export default function SimpleSnackbar() {
+    const [open, setOpen] = React.useState(false);
 
-export default function Toastify({children,title}) {
-    function notify() {
-        toast.dark(title,);
-    }
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+    const action = (
+        <React.Fragment>
+            <Button color="secondary" size="small" onClick={handleClose}>
+                UNDO
+            </Button>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
 
     return (
-        <>
-            <div className="App" onClick={notify}>
-                {children}
-            </div>
-            <ToastContainer/>
-        </>
+        <div>
+            <Button onClick={handleClick}>Open simple snackbar</Button>
+            <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="Note archived"
+                action={action}
+            />
+        </div>
     );
 }

@@ -4,6 +4,8 @@ import Header from '../Components/Header/Header'
 import About from './About'
 import Footer from "../Components/Footer/Footer";
 import ProductTab from "../container/ProductTab";
+import Toastify from "../Components/Toastify";
+import BasicAlerts from "../Components/Toastify";
 
 const HomePage = () => {
     return (
@@ -13,6 +15,8 @@ const HomePage = () => {
                 <ProductTab/>
                 <About/>
                 <Footer/>
+            <BasicAlerts/>
+
         </div>
     )
 }
