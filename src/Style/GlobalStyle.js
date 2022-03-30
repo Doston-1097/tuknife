@@ -25,9 +25,6 @@ const inputGlobalStyles = (mode) => (
             },
             ".css-e9km3k-MuiTabs-root": {
             },
-            ".css-1e6cyy-MuiTabs-indicator": {
-                display: "none !important"
-            },
             ".css-17evscu-MuiButtonBase-root-MuiTab-root>.MuiTab-iconWrapper":{
                 marginBottom:"30px !important"
             },
@@ -36,6 +33,9 @@ const inputGlobalStyles = (mode) => (
             },
             ".MuiInput-input::before":{
                 borderBottom:"0px !important"
+            },
+            ".MuiTabs-indicator":{
+                backgroundColor:"transparent !important"
             }
 
 
