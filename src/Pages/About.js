@@ -134,7 +134,7 @@ const About = () => {
             sx={{
               width: "100%",
               alignItems: "center",
-              justifyContent: { xs: "center", lg: 'space-between'},
+              justifyContent: { lg: 'space-between'},
               gap: "20px",
               flexWrap: "wrap",
             }}
@@ -146,7 +146,7 @@ const About = () => {
                   overflow:"hidden",
             }}
             >
-              <img styles={{ width: "100%",height: "100%", objectFit:'cover' }} src={leftRect} />
+              <img style={{ width: "100% !important",height: "100%", objectFit:'cover' }} src={leftRect} />
               <Box
                 className="dis"
                 sx={{

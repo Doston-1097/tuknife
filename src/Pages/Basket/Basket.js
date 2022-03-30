@@ -249,12 +249,12 @@ function Basket(props) {
                         backgroundColor: '#232323',
                         color: 'white',
                         paddingY: '60px !important',
-                        paddingX: '40px !important'
+                        paddingX: {lg:'40px !important',xs: '20px'}
                     }}>
-                        <Typography component={'h3'} variant={'h4'}>Для подтверждения заказа - введите ваши данные и мы
+                        <Typography sx={{textAlign: {xs:'center'},pb:"20px"}} component={'h3'} variant={'h4'}>Для подтверждения заказа - введите ваши данные и мы
                             перезвоним вам</Typography>
                         <Grid container>
-                            <Grid item xs={12} md={6} lg={6} px={2}>
+                            <Grid item xs={12} md={6} lg={6} sx={{paddingRight:{xs:"0", lg:"20px"}}}>
                                 <form>
                                     <Input
                                         component={'input'} variant='input'
