@@ -31,6 +31,12 @@ const inputGlobalStyles = (mode) => (
             ".css-17evscu-MuiButtonBase-root-MuiTab-root>.MuiTab-iconWrapper":{
                 marginBottom:"30px !important"
             },
+            ".MuiInput-input::after":{
+                borderBottom:"0px !important"
+            },
+            ".MuiInput-input::before":{
+                borderBottom:"0px !important"
+            }
 
 
 

@@ -72,8 +72,8 @@ const useStyles = makeStyles({
         alignItems: "center",
         borderRadius:"50%",
         position: "absolute",
-        bottom:"-25%",
-        left:"-15%",
+        top:"-20%",
+        right:"-15%",
     },
 });
 

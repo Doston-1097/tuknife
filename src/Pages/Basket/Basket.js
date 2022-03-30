@@ -50,6 +50,7 @@ function Basket(props) {
     const removeBasket = (id) => {
         dispatch({type: "REMOVE_BASKET", payload: id});
     };
+    const numeral=require("numeral")
     //------------------------------------------------------------------------------
 
     //savat qismidan asosiy menuga qaytish
@@ -165,7 +166,7 @@ function Basket(props) {
 
                                             <Typography variant="body2" color="text.secondary"
                                                         sx={{color: 'white !important'}}>
-                                                {getItem.price * getItem.nums} сум
+                                                {numeral(getItem.price * getItem.nums).format("0,0")} сум
                                             </Typography>
                                             <CardActions>
 
@@ -188,7 +189,7 @@ function Basket(props) {
                         }} xs={12} md={10} lg={8} xl={6} padding={3}>
                             <Box>
                                 <Typography>К оплате:</Typography>
-                                <Typography>{allPrice} so'm</Typography>
+                                <Typography> {numeral(allPrice).format("0,0")} сум</Typography>
                             </Box>
                         </Box>
 
@@ -307,6 +308,7 @@ function Basket(props) {
                                             backgroundColor: '#303030',
                                             paddingX: '18px',
                                             paddingY: '25px',
+                                            borderBottom:"2px solid red"
                                         }}
                                         placeholder={'Ваша почта'}
                                         inputRef={emailRef}
