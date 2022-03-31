@@ -103,7 +103,7 @@ function Basket(props) {
             notify("👋 Заявка отправлена !")
             setTimeout(() => {
                 window.location.reload(true)
-            }, 3000);
+            }, 2000);
 
         }
 

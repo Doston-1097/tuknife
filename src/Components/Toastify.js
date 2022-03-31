@@ -15,8 +15,7 @@ export default function Toastify() {
         <>
             <div className="App">
                 <div className="btn-group">
-                    <button className="btn" onClick={notify} id="animate.css">
-                        click me
+                    <button className="btn" style={{display:"none"}} onClick={notify} id="animate.css">
                     </button>
                 </div>
             </div>
