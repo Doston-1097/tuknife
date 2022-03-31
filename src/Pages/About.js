@@ -107,6 +107,7 @@ const About = () => {
                 boxShadow:"0 4px 20px rgba(0,0,0,0.3)",
                 borderRadius:"20px",
                 overflow:"hidden",
+                display:"flex",
             }}
           >
             <img
@@ -124,7 +125,7 @@ const About = () => {
           sx={{ borderColor: "rgba(255, 255, 255, 0.2)", margin: "30px 0px" }}
         />
 
-        <Box>
+        <Box sx={{}}>
           <Typography sx={{ fontSize: "21px" }} mb={3}>
             Всё самое интересное о ножах
           </Typography>
@@ -134,7 +135,7 @@ const About = () => {
             sx={{
               width: "100%",
               alignItems: "center",
-              justifyContent: { lg: 'space-between'},
+              justifyContent: { lg: 'space-between',xs:"center"},
               gap: "20px",
               flexWrap: "wrap",
             }}
