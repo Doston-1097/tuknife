@@ -24,7 +24,7 @@ function AdminAddProduct(props) {
         }
         console.log(setData)
         setAdminProducts(setData);
-    }
+        }
     return (
         <StyleAddProduct>
             <Typography sx={{color: 'white'}} component={'h2'} variant={'h3'}>Add  Product</Typography>

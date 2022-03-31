@@ -25,6 +25,8 @@ import {sendProducts} from "../../redux/actions/doing";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import Toastify from "../../Components/Toastify";
+import {injectStyle} from "react-toastify/dist/inject-style";
+import {toast} from "react-toastify";
 
 function Basket(props) {
     window.scrollTo(0, 0);
@@ -50,7 +52,7 @@ function Basket(props) {
     const removeBasket = (id) => {
         dispatch({type: "REMOVE_BASKET", payload: id});
     };
-    const numeral=require("numeral")
+    const numeral = require("numeral")
     //------------------------------------------------------------------------------
 
     //savat qismidan asosiy menuga qaytish
@@ -75,9 +77,16 @@ function Basket(props) {
     const nameRef = useRef("");
     const numberRef = useRef("");
     const emailRef = useRef("");
+    if (typeof window !== "undefined") {
+        injectStyle();
+    }
+
+    function notify(hello) {
+        toast.dark(hello);
+    }
 
     const sendValue = () => {
-        const userData={
+        const userData = {
             name: nameRef.current.value,
             phone: numberRef.current.value,
             email: emailRef.current.value,
@@ -90,10 +99,14 @@ function Basket(props) {
             console.log(userData);
             sendProducts(getBasket, userData);
             setBasketcha([])
-            window.location.reload(true)
-            navigate("./")
+            navigate("/")
+            notify("👋 Заявка отправлена !")
+            setTimeout(() => {
+                window.location.reload(true)
+            }, 3000);
 
         }
+
         // return console.log(nameRef.current.value,numberRef.current.value,emailRef.current.value);
     };
 
@@ -106,7 +119,8 @@ function Basket(props) {
                 <Grid container sx={{display: 'inline'}} spacing={2}>
                     <Grid item xs={8} md={6}
                           sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <Box><Button onClick={() => goBack()} sx={{color: 'white !important'}}><CgArrowLongLeft/>назад</Button></Box>
+                        <Box><Button onClick={() => goBack()}
+                                     sx={{color: 'white !important'}}><CgArrowLongLeft/>назад</Button></Box>
                     </Grid>
                     <Typography component={'h3'} variant='h2'
                                 sx={{textAlign: 'center', mb: "50px", color: 'white !important'}}>Kорзина</Typography>
@@ -249,12 +263,13 @@ function Basket(props) {
                         backgroundColor: '#232323',
                         color: 'white',
                         paddingY: '60px !important',
-                        paddingX: {lg:'40px !important',xs: '20px'}
+                        paddingX: {lg: '40px !important', xs: '20px'}
                     }}>
-                        <Typography sx={{textAlign: {xs:'center'},pb:"20px"}} component={'h3'} variant={'h4'}>Для подтверждения заказа - введите ваши данные и мы
+                        <Typography sx={{textAlign: {xs: 'center'}, pb: "20px"}} component={'h3'} variant={'h4'}>Для
+                            подтверждения заказа - введите ваши данные и мы
                             перезвоним вам</Typography>
                         <Grid container>
-                            <Grid item xs={12} md={6} lg={6} sx={{paddingRight:{xs:"0", lg:"20px"}}}>
+                            <Grid item xs={12} md={6} lg={6} sx={{paddingRight: {xs: "0", lg: "20px"}}}>
                                 <form>
                                     <Input
                                         component={'input'} variant='input'
@@ -308,7 +323,6 @@ function Basket(props) {
                                             backgroundColor: '#303030',
                                             paddingX: '18px',
                                             paddingY: '25px',
-                                            borderBottom:"2px solid red"
                                         }}
                                         placeholder={'Ваша почта'}
                                         inputRef={emailRef}
@@ -327,14 +341,14 @@ function Basket(props) {
                                             конфиденциальности</Typography>, а также согласен получать
                                         информационную рассылку</Typography>
 
-                                        <Button variant="contained" onClick={sendValue} sx={{
-                                            color: 'white',
-                                            backgroundColor: '#C80000',
-                                            paddingY: '16px',
-                                            paddingX: '34px',
-                                            borderRadius: '27px',
-                                            '&:hover': {backgroundColor: '#C82000'}
-                                        }}>Отправить форму</Button>
+                                    <Button variant="contained" onClick={sendValue} sx={{
+                                        color: 'white',
+                                        backgroundColor: '#C80000',
+                                        paddingY: '16px',
+                                        paddingX: '34px',
+                                        borderRadius: '27px',
+                                        '&:hover': {backgroundColor: '#C82000'}
+                                    }}>Отправить форму</Button>
 
 
                                 </Box>

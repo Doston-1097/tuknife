@@ -15,29 +15,35 @@ const inputGlobalStyles = (mode) => (
             ".MuiListItem-root ": {
                 padding: "0 !important"
             },
-            ".MuiContainer-root": {
-            },
+            ".MuiContainer-root": {},
             ".Mui-selected": {
                 color: "#FF0000 !important"
             },
             ".MuiTouchRipple-root": {
                 display: "none !important"
             },
-            ".css-e9km3k-MuiTabs-root": {
+            ".css-e9km3k-MuiTabs-root": {},
+            ".css-17evscu-MuiButtonBase-root-MuiTab-root>.MuiTab-iconWrapper": {
+                marginBottom: "30px !important"
             },
-            ".css-17evscu-MuiButtonBase-root-MuiTab-root>.MuiTab-iconWrapper":{
-                marginBottom:"30px !important"
+            ".MuiInput-root": {
+                borderBottom: "3px solid transparent !important",
+                transition: ".3s !important",
+                '&::after': {
+                    borderBottom: "3px solid transparent !important",
+                    borderRadius: "10px !important"
+                },
+                '&::before': {
+                    borderBottom: "0px !important"
+                },
+                '&:focus-within': {
+                    borderBottom: "3px solid red !important",
+                    borderRadius: "10px !important"
+                },
             },
-            ".MuiInput-input::after":{
-                borderBottom:"0px !important"
-            },
-            ".MuiInput-input::before":{
-                borderBottom:"0px !important"
-            },
-            ".MuiTabs-indicator":{
-                backgroundColor:"transparent !important"
+            ".MuiTabs-indicator": {
+                backgroundColor: "transparent !important"
             }
-
 
 
         }}

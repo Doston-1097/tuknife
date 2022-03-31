@@ -5,7 +5,7 @@ import {
     FormControl,
     OutlinedInput,
     IconButton,
-    Button,
+    Button, Container,
 } from "@mui/material";
 import {styled} from "@mui/system";
 import React from "react";
@@ -47,19 +47,11 @@ function Map() {
                     Карта
                 </Typography>
             </Box>
-            <Box
+            <Container
                 sx={{
-                    padding: {
-                        xs: "20px, 30px",
-                        sm: "25px 70px",
-                        md: "30px 250px",
-                        lg: "30px 315px",
-                    },
-                    backgroundColor: "#272727",
+                    backgroundColor: "#transparent",
                     color: "white",
-                    md: {
-                        paddingX: "200px",
-                    },
+                    paddingY: "40px"
                 }}
             >
                 <Box sx={{flexGrow: 1, color: "#828282"}}>
@@ -80,7 +72,12 @@ function Map() {
                                 </Box>
                             </Item>
                         </Grid>
-                        <Grid item lg={6} xs={12} sx={{display: 'flex', alignItems: 'center',justifyContent:"center",flexDirection: 'column'}}>
+                        <Grid item lg={6} xs={12} sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: "center",
+                            flexDirection: 'column'
+                        }}>
                             <Item>
                                 <IconButton
                                     sx={{
@@ -153,12 +150,12 @@ function Map() {
                                 </IconButton>
                             </Item>
                         </Grid>
-                        <Grid item md={8} xs={12}>
-                            <Box>
+                        <Grid item md={8} lg={6} xs={12}>
+                            <Box sx={{borderRadius: "20px", overflow: "hidden",}}>
                                 <Clear/>
                             </Box>
                         </Grid>
-                        <Grid item md={4} xs={12}>
+                        <Grid item md={4} xs={12} lg={6}>
                             <Item>
                                 <Button
                                     variant="outlined"
@@ -179,116 +176,117 @@ function Map() {
                         </Grid>
                     </Grid>
                 </Box>
-            </Box>
-            <Box
-                sx={{
-                    color: "white",
-                    backgroundColor: "#373737",
-                    textAlign: "center",
-                    padding: {xs: "50px", sm: "40px 65px", md: "80px 100px 40px 100px"},
-                }}
-            >
-                <Grid container spacing={2}>
-                    <Grid
-                        sx={{
-                            flexWrap: {xs: "wrap", md: "nowrap"},
-                            display: "flex",
-                            width: "100%",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                        }}
-                    >
-                        <Item sx={{width: {xs: "100%", sm: "50%"}}}>
-                            <img src={Knives1} alt="knives" width="80%"/>
-                        </Item>
-                        <Item
+            </Container>
+            <Box sx={{
+                color: "white",
+                backgroundColor: "#373737",
+                textAlign: "center",
+                paddingY:"80px"
+            }}>
+                <Container>
+                    <Grid container spacing={2}>
+                        <Grid
                             sx={{
-                                flex: "1",
+                                flexWrap: {xs: "wrap", md: "nowrap"},
                                 display: "flex",
+                                width: "100%",
                                 alignItems: "center",
-                                justifyContent: "center",
-                                flexDirection: "column",
+                                justifyContent: "space-between",
                             }}
                         >
-                            <Typography
+                            <Item sx={{width: {xs: "100%", sm: "50%"},overflow:"hidden !important"}}>
+                                <img  src={Knives1} alt="knives" width="80%"/>
+                            </Item>
+                            <Item
                                 sx={{
-                                    fontWeight: "600",
-                                    fontSize: "24px",
-                                    maxWidth: {xs: "100%", sm: "330px"},
+                                    flex: "1",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    flexDirection: "column",
                                 }}
                             >
-                                Исключительное качество без компромиссов
-                            </Typography>
-                            <Typography sx={{maxWidth: {xs: "100%", sm: "330px"}}}>
-                                Ножи «Tuotown» — это главный инструмент поваров и секрет
-                                кулинарного мастерства
-                            </Typography>
-                        </Item>
-                    </Grid>
+                                <Typography
+                                    sx={{
+                                        fontWeight: "600",
+                                        fontSize: "24px",
+                                        maxWidth: {xs: "100%", sm: "330px"},
+                                    }}
+                                >
+                                    Исключительное качество без компромиссов
+                                </Typography>
+                                <Typography sx={{maxWidth: {xs: "100%", sm: "330px"}}}>
+                                    Ножи «Tuotown» — это главный инструмент поваров и секрет
+                                    кулинарного мастерства
+                                </Typography>
+                            </Item>
+                        </Grid>
 
-                    <Grid
-                        sx={{
-                            flexWrap: {xs: "wrap", md: "nowrap"},
-                            display: "flex",
-                            width: "100%",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            margin: '40px 0px'
-                        }}
-                    >
-
-                        <Item
+                        <Grid
                             sx={{
-                                flex: "1",
+                                flexWrap: {xs: "wrap", md: "nowrap"},
                                 display: "flex",
+                                width: "100%",
                                 alignItems: "center",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                                order: {xs: '2', sm: '1'},
+                                justifyContent: "space-between",
+                                margin: '40px 0px'
                             }}
                         >
-                            <Typography
+
+                            <Item
                                 sx={{
-                                    fontWeight: "600",
-                                    fontSize: "24px",
-                                    maxWidth: {xs: "100%", sm: "330px"},
+                                    flex: "1",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    flexDirection: "column",
+                                    order: {xs: '2', sm: '1'},
                                 }}
                             >
-                                Исключительное качество без компромиссов
-                            </Typography>
-                            <Typography sx={{maxWidth: {xs: "100%", sm: "330px"}}}>
-                                Ножи «Tuotown» — это главный инструмент поваров и секрет
-                                кулинарного мастерства
-                            </Typography>
-                        </Item>
-                        <Item sx={{width: {xs: "100%", sm: "50%"}, order: {xs: '1', sm: '2'}}}>
-                            <img src={Knives2} alt="knives" width="80%"/>
-                        </Item>
+                                <Typography
+                                    sx={{
+                                        fontWeight: "600",
+                                        fontSize: "24px",
+                                        maxWidth: {xs: "100%", sm: "330px"},
+                                    }}
+                                >
+                                    Исключительное качество без компромиссов
+                                </Typography>
+                                <Typography sx={{maxWidth: {xs: "100%", sm: "330px"}}}>
+                                    Ножи «Tuotown» — это главный инструмент поваров и секрет
+                                    кулинарного мастерства
+                                </Typography>
+                            </Item>
+                            <Item sx={{width: {xs: "100%", sm: "50%"}, order: {xs: '1', sm: '2'}}}>
+                                <img src={Knives2} alt="knives" width="80%"/>
+                            </Item>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Box sx={{paddingY: "30px"}}>
-                    <Typography
-                        component="h2"
-                        variant="h2"
-                        sx={{lineHeight: "28px", fontSize: "24px", fontWeight: "500"}}
-                    >
-                        Узнавайте первым о новинках и новостях
-                    </Typography>
-                </Box>
-                <Box component="form" noValidate autoComplete="off">
-                    <FormControl sx={{}}>
-                        <OutlinedInput
-                            placeholder="Ваш e-mail"
-                            sx={{
-                                borderRadius: "5px !important",
-                                color: "#ADACAC",
-                                borderColor: "#ADACAC",
-                                backgroundColor: "#272727",
-                            }}
-                        />
-                    </FormControl>
-                </Box>
+                    <Box sx={{paddingY: "30px"}}>
+                        <Typography
+                            component="h2"
+                            variant="h2"
+                            sx={{lineHeight: "28px", fontSize: "24px", fontWeight: "500"}}
+                        >
+                            Узнавайте первым о новинках и новостях
+                        </Typography>
+                    </Box>
+                    <Box component="form" noValidate autoComplete="off">
+                        <FormControl sx={{}}>
+                            <OutlinedInput
+                                placeholder="Ваш e-mail"
+                                sx={{
+                                    borderRadius: "5px !important",
+                                    color: "#ADACAC",
+                                    borderColor: "#ADACAC",
+                                    backgroundColor: "#272727",
+                                }}
+                            />
+                        </FormControl>
+                    </Box>
+                </Container>
             </Box>
+
             <Footer/>
         </Box>
     );
