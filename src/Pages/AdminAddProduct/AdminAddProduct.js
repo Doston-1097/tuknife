@@ -5,7 +5,7 @@ import {setAdminProducts} from "../../redux/actions/doing";
 
 //-------------------------------------------
 const StyleAddProduct=styled.div`
-margin-top:64px;
+margin-top:66px;
 `
 
 function AdminAddProduct(props) {
